@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NSPD TEST WEB</title><link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div id="login" class="overlay"><form id="loginForm" class="login-card"><div class="mark">НСПД / LAB</div><h1>NSPD TEST WEB</h1><p>Защищённый вход в лабораторию</p><input id="password" type="password" name="password" placeholder="Пароль" autocomplete="current-password" required><button>ВОЙТИ</button><div id="loginError" class="error"></div></form></div>
+<main>
+  <header><div><div class="eyebrow">ЕНОТКОРП / КАДАСТРОВАЯ ЛАБОРАТОРИЯ</div><h1>NSPD TEST WEB</h1><p>Автономная лаборатория кадастрового поиска и сетевой диагностики.</p></div><button id="logout" class="ghost">ВЫЙТИ</button></header>
+  <section class="status-grid" id="statusGrid"></section>
+  <div class="columns">
+    <section class="panel"><div class="panel-head"><span>01</span><div><h2>СЕТЕВАЯ ДИАГНОСТИКА</h2><p>DNS → TCP:443 → TLS → HTTP → API</p></div></div><button id="networkBtn" class="primary">ПРОВЕРИТЬ ДОСТУПНОСТЬ НСПД</button><div id="networkStages" class="stages"></div></section>
+    <section class="panel"><div class="panel-head"><span>02</span><div><h2>ПОИСК КАДАСТРОВОГО НОМЕРА</h2><p>Проверенный алгоритм Bot 2</p></div></div><textarea id="address" maxlength="1000" placeholder="Введите адрес объекта недвижимости"></textarea><label class="check"><input id="debug" type="checkbox"> Сохранять полные ответы API (debug NSPD)</label><button id="searchBtn" class="primary amber">НАЙТИ КАДАСТРОВЫЕ ОБЪЕКТЫ</button><div id="searchResult"></div></section>
+  </div>
+  <section class="panel log-panel"><div class="panel-head"><span>03</span><div><h2>ЖУРНАЛ РАБОТЫ</h2><p>Последние события и диагностические файлы</p></div><button id="refreshLog" class="ghost">ОБНОВИТЬ</button></div><div id="files"></div><div class="table-wrap"><table><thead><tr><th>Время</th><th>Этап</th><th>Статус</th><th>мс</th><th>Ошибка</th></tr></thead><tbody id="events"></tbody></table></div></section>
+</main><script src="/assets/app.js"></script>
+</body></html>
